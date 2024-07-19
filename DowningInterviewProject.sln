@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DowningInterviewProject.API", "DowningInterviewProject.API\DowningInterviewProject.API.csproj", "{FD38AA8C-32B0-4D25-AC4F-E397AAF18842}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DowningInterviewProject.WebAPI", "DowningInterviewProject.WebAPI\DowningInterviewProject.WebAPI.csproj", "{E16CC15E-56FC-4B70-841B-215E74D69B45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD38AA8C-32B0-4D25-AC4F-E397AAF18842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD38AA8C-32B0-4D25-AC4F-E397AAF18842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD38AA8C-32B0-4D25-AC4F-E397AAF18842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD38AA8C-32B0-4D25-AC4F-E397AAF18842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E16CC15E-56FC-4B70-841B-215E74D69B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E16CC15E-56FC-4B70-841B-215E74D69B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E16CC15E-56FC-4B70-841B-215E74D69B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E16CC15E-56FC-4B70-841B-215E74D69B45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F8B3E9E-105E-4200-A90B-E6F4F65A8E5A}
+	EndGlobalSection
+EndGlobal

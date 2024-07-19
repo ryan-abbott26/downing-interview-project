@@ -1,0 +1,39 @@
+<div class="px-3">
+    <h1 class="display-4">Add a company</h1>
+    <p class="lead">Fill in the form and hit save to store a new company</p>
+    <p>Fields marked with <i class="text-danger">*</i> are mandatory</p>
+</div>
+<form [formGroup]="companyFormGroup">
+    <div class="form-group mb-3">
+        <label for="name" class="form-label">Company name<i class="text-danger">*</i></label>
+        <div class="col-6 mb-0">
+            <input type="text" placeholder="Enter a company name&hellip;" id="name" [ngClass]="controls.name.invalid && (controls.name.dirty || controls.name.touched) ? 'is-invalid': ''" class="form-control" formControlName="name" maxlength="100" required>
+        </div>
+        <div class="mb-0" *ngIf="controls.name.invalid && (controls.name.dirty || controls.name.touched)">
+            <p class="text-danger m-0" *ngIf="controls.name.errors?.['required']"><small>Please enter a company name</small></p>
+        </div>
+    </div>
+    <div class="form-group mb-3">
+        <label for="code" class="form-label">Code<i class="text-danger">*</i></label>
+        <div class="col-3 mb-0">
+            <input type="text" placeholder="Enter a code&hellip;" id="code" [ngClass]="controls.code.invalid && (controls.code.dirty || controls.code.touched) ? 'is-invalid': ''" class="form-control" formControlName="code" maxlength="10" required>
+        </div>
+        <div class="mb-0" *ngIf="controls.code.invalid && (controls.code.dirty || controls.code.touched)">
+            <p class="text-danger m-0" *ngIf="controls.code.errors?.['required']"p><small>Please enter a code</small></p>
+            <p class="text-danger m-0" *ngIf="controls.code.errors?.['pattern']"><small>Please use uppercase only with only alphanumeric characters</small></p>
+            <p class="text-danger m-0" *ngIf="controls.code.errors?.['codeAlreadyExists']"><small>Please enter a unique code</small></p>
+        </div>
+    </div>
+    <div class="form-group mb-3">
+        <label for="share-price" class="form-label">Share price</label>
+        <div class="col-3 mb-0">
+            <input type="text" placeholder="Enter a price&hellip;" id="share-price" [ngClass]="controls.sharePrice.invalid && (controls.sharePrice.dirty || controls.sharePrice.touched) ? 'is-invalid': ''" class="form-control" formControlName="sharePrice">
+        </div>
+        <div *ngIf="controls.sharePrice.invalid && (controls.sharePrice.dirty || controls.sharePrice.touched)">
+            <p class="text-danger m-0" *ngIf="controls.sharePrice.errors?.['pattern']"><small>Share price must be a number with up to 5 decimal places</small></p>
+        </div>
+    </div>
+    <button class="btn btn-primary" [disabled]="!companyFormGroup.dirty || companyFormGroup.invalid" (click)="save()">Save</button>
+    <div class="mt-2" *ngIf="isSaving && !isSaveError">Saving&hellip;</div>
+    <div class="mt-2" *ngIf="!isSaving && isSaveError">Saving failed</div>
+</form>

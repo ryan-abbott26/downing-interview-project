@@ -1,0 +1,6 @@
+@DowningInterviewProject.Server_HostAddress = https://localhost:7146
+
+GET {{DowningInterviewProject.Server_HostAddress}}/api/company/
+Accept: application/json
+
+###

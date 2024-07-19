@@ -1,0 +1,26 @@
+<div class="px-3">
+  <h1 class="display-4">Companies</h1>
+  <p class="lead">View a list of current companies</p>
+  <p *ngIf="loading">loading companies&hellip;</p>
+</div>
+<table class="table table-hover mx-3 fixed" *ngIf="!loading">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Code</th>
+      <th scope="col">Current share price</th>
+      <th scope="col">Created date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let company of companies; let i = index">
+      <td scope="row">{{ i + 1 }}</td>
+      <td>{{ company.name }}</td>
+      <td>{{ company.code }}</td>
+      <td>{{ company.sharePrice | number:'1.0-5' }}</td>
+      <td>{{ company.createdDate | date:'dd-MMM-yyyy' }}</td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-primary mx-3" (click)="navigateToAdd()">Add Company</button>
